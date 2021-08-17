@@ -5,10 +5,6 @@ from app import app
 def index():
     return "Hello word!"
 
-@app.route("/teste",defaults = {'nome': None})
-@app.route("/teste/<nome>")
-def teste(nome):
-    if nome:
-       return f"Oi Sr.{nome}"
-    else:
-       return f"Oi, sem nome" 
+@app.route("/graficos")
+def grafico():
+    return "Parte do grafico"
