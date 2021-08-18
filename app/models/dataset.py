@@ -1,7 +1,7 @@
 import pandas as pd
 
 #Class
-class Dataset():
+class ModelsDataset():
     def __init__(self) -> None:
        local_arquivo = ''
     def leitura_csv(self):
