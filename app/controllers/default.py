@@ -4,8 +4,9 @@ from flask import render_template
 @app.route("/index", methods = ['GET'])
 @app.route("/")
 def index():
-    return render_template('teste.html')
+    return render_template('index.html')
 
+@app.route("/dashboard", methods = ['GET'])
 @app.route("/dashboard")
-def grafico():
-    return render_template('grafico.html')
+def dashboard():
+    return render_template('dashboard.html')
