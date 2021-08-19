@@ -2,7 +2,10 @@ import pandas as pd
 
 #Class
 class ModelsDataset():
-    def __init__(self) -> None:
-       local_arquivo = ''
-    def leitura_csv(self):
-        pass       
+     
+    def leitura_csv(self,dataset_local):
+        df = pd.read_csv(dataset_local)
+        pass    
+class ModelsArquivo():
+    def devolve_local(self,local):
+        return        
