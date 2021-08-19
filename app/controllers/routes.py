@@ -5,8 +5,8 @@ from flask import current_app as app
     
 @app.route("/index", methods = ['GET'])
 @app.route("/")
-@app.route("/home", methods = ['GET'])
-def home():
+
+def index():
     return render_template('index.html')
 
 
