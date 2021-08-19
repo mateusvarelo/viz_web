@@ -59,7 +59,7 @@ filename = "css/bootstrap.min.css") }}" rel="stylesheet" integrity="sha384-KyZXE
   </div>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
-      <a href="http://127.0.0.1:5000/" class="navbar-brand d-flex align-items-center">
+      <a href="{{url_for('index')}}" class="navbar-brand d-flex align-items-center">
         <img id="python" src="../static/img/icon_casa.svg"  border-radius = "20%" width="20" height="20" allign="left">
          <strong>Início</strong>
       </a>
@@ -78,7 +78,7 @@ filename = "css/bootstrap.min.css") }}" rel="stylesheet" integrity="sha384-KyZXE
         <h1 class="fw-light">Meu Dashboard</h1>
         <p class="lead text-muted">Divirta-se visualizando um pouco da minha história, atráves de gráficos e textos irei contar um pouco de como tem sido a minha utilização do youtube.</p>
         <p>
-          <a href="http://127.0.0.1:5000/dashboard" class="btn btn-primary my-2">Dashboard</a>
+          <a href="{{url_for('dashboard')}}" class="btn btn-primary my-2">Dashboard</a>
         </p>
       </div>
     </div>
@@ -96,7 +96,7 @@ filename = "css/bootstrap.min.css") }}" rel="stylesheet" integrity="sha384-KyZXE
               <p class="card-text">Foto-1.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button href = "" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                  <button href = "{{url_for('grafico_turno')}}" type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
                 </div>
                
               </div>
@@ -144,7 +144,7 @@ filename = "css/bootstrap.min.css") }}" rel="stylesheet" integrity="sha384-KyZXE
 <footer class="text-muted py-5">
   <div class="container">
     <p class="float-end mb-1">
-      <a href="http://127.0.0.1:5000/">Voltar para o topo</a>
+      <a href="{{url_for('index')}}">Voltar para o topo</a>
     </p>
     <p class="mb-1">Relatório pessoal &copy; Mateus Varelo</p>
    

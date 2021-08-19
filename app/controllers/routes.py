@@ -15,5 +15,5 @@ def dashboard():
 
 @app.route("/grafico_turno", methods = ['GET'])
 @app.route("/grafico_turno")
-def grafico_1():
+def grafico_turno():
     return render_template('grafico_turno.html')
