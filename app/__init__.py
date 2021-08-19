@@ -1,8 +1,16 @@
 from flask import Flask
 
-#app = Flask(__name__)
-def init_app():
-    
-    app.config.from_object('config')
 
-from app.controllers import routes
+def init_app():
+    """Construct core Flask application with embedded Dash app."""
+    app = Flask(__name__)
+    app.config.from_object('config')
+    with app.app_context():
+        # Import parts of our core Flask app
+        from app.controllers import routes
+
+        # Import Dash application
+        from .plotlydash.dashboard import init_dashboard
+        app = init_dashboard(app)        
+        
+        return app

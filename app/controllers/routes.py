@@ -1,17 +1,13 @@
-from app import app
+#from app import app
 from flask import render_template
-
+from flask import current_app as app
 
     
-@app.route("/index", methods = ['GET'])
+@app.route("/home", methods = ['GET'])
 @app.route("/")
-def index():
-    return render_template('index.html')
+def home():
+    return render_template('home.html')
 
-@app.route("/dashboard", methods = ['GET'])
-@app.route("/dashboard")
-def dashboard():
-    return render_template('dashboard.html')
 
 @app.route("/grafico_turno", methods = ['GET'])
 @app.route("/grafico_turno")
