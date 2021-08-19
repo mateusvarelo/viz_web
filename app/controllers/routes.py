@@ -3,13 +3,13 @@ from flask import render_template
 from flask import current_app as app
 
     
-@app.route("/home", methods = ['GET'])
+@app.route("/index", methods = ['GET'])
 @app.route("/")
+@app.route("/home", methods = ['GET'])
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route("/grafico_turno", methods = ['GET'])
-@app.route("/grafico_turno")
 def grafico_turno():
     return render_template('grafico_turno.html')
