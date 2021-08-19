@@ -1,3 +1,6 @@
-pandas==1.3.2
 Flask==2.0.1
-gunicorn
+dash_html_components==1.1.4
+dash_core_components==1.17.1
+pandas==1.3.2
+plotly==5.2.1
+dash==1.21.0
