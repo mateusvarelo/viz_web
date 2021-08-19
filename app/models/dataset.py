@@ -5,7 +5,6 @@ class ModelsDataset():
      
     def leitura_csv(self,dataset_local):
         df = pd.read_csv(dataset_local)
-        pass    
-class ModelsArquivo():
-    def devolve_local(self,local):
-        return        
+        return df    
+
+    
