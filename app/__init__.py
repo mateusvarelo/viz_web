@@ -15,7 +15,7 @@ def init_app():
        
         
         # Import Dash application
-        from .plotlydash.dashboard import init_dashboard
+        from .models.dashboard import init_dashboard
         
         app = init_dashboard(app)        
         
