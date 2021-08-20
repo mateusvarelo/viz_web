@@ -21,3 +21,4 @@ def init_app():
         
         
         return app
+app = init_app()    
