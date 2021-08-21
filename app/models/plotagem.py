@@ -9,7 +9,7 @@ def cores_padrao():
         }
         return colors    
 
-#Criação de figuras, ou melhor dos gráficos que serão lançados no layout do app dashaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#Criação de figuras, ou melhor dos gráficos que serão lançados no layout do app dash
 def layout_update(obj_update):
     colors = cores_padrao()    
     layout = obj_update.update_layout(
