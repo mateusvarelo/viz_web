@@ -1,47 +1,31 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.express as px
-import pandas as pd
+from .plotagem import cria_figura,cores_padrao
 
+"""Nesse modulo será possivel criar um layout para a pagina  do dashboard"""
 
 
 def init_dashboard(server):
-    """Create a Plotly Dash dashboard."""
+    """Create a Plotly Dash dashboard como um servidor dash."""
+    #Estilo css para a pagina
     external_stylesheets = ['/home/mateus/Repositorios/viz_web/app/static/css/bootstrap.min.css']
+    #App dash
     dash_app = dash.Dash(
         server=server,
         routes_pathname_prefix='/dashboard/',
         external_stylesheets= external_stylesheets
     )
-    colors = {
-    'background': '#F8F8FF',
-    'text': '#111111'
-}
-    #create dataframe
-    df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-})
+  
+    #cores_padrão
+    colors = cores_padrao()
+    
     # Create Dash Layout
-    #figura 01
-    fig = px.bar(df, x="Fruit", y="Amount", barmode="relative")
-    
-    fig.update_layout(
-    plot_bgcolor=colors['background'],
-    paper_bgcolor=colors['background'],
-    font_color=colors['text']
-)
-    
-    #figura 02
-    fig2 = px.bar(df, x="Fruit", y="Amount", barmode="relative",title = 'Canais mais visualizados')
-    fig2.update_layout(
-    plot_bgcolor=colors['background'],
-    paper_bgcolor=colors['background'],
-    font_color=colors['text']
-)
-    
+    #figura 01, primeiros 7 generos mais ouvidos
+    trace1  = cria_figura()
+  
+
+    trace2 = cria_figura()   
     dash_app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
     html.H1(
         children='Dashboard',
@@ -50,7 +34,7 @@ def init_dashboard(server):
             'color': colors['text']
         }
     ), html.H4(
-        children='Melhores artistas',
+        children='Vamos ver o que trás os dados de utilização da plataforms youtube e spotify.',
         style={
             'textAlign': 'left',
             'color': colors['text']
@@ -66,7 +50,7 @@ def init_dashboard(server):
 
     dcc.Graph(
         id='example-graph-1',
-        figure=fig
+        figure=trace1 
     ),
     html.Div(children='Gráfico-02: Canais mais acessados.',
              style={
@@ -77,7 +61,7 @@ def init_dashboard(server):
 
     dcc.Graph(
         id='example-graph-2',
-        figure=fig2
+        figure=trace2 
     )
 ,html.A(children='Voltar para inicio',
              href = "https://vizwebdash.herokuapp.com/"
