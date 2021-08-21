@@ -1,14 +1,14 @@
 import plotly.express as px
 import plotly.graph_objects as go
 
-from .dataset import df_spotify_genero
+from .dataset import df_spotify_genero,df_spotify_artista
 
 
 #Cria dict com cores padões para ser usado no gráfico e no layout do dash
 def cores_padrao():
         colors = {
-        'background': '#F8F8FF',
-        'text': '#111111'
+        'background': '#FFFAFA',
+        'text': '#000000'
         }
         return colors   
 
@@ -46,9 +46,9 @@ def cria_fig_horizontal_barra():
 def cria_fig_vertical_barra():
      #figura 01, primeiros 7 generos mais 
      #Busca  dataframe para plotar gráfico do spotify e cria a figura 
-     df = df_spotify_genero()
+     df = df_spotify_artista()
      fig = go.Figure(go.Bar(
-            x=df["genero"],
+            x=df["Artista"],
             y=df["Quantidade"],
              marker=dict(
              color='#32CD32',

@@ -36,25 +36,29 @@ def init_dashboard(server):
             'color': colors['text']
         }
     ), html.H4(
-        children='Vamos ver o que trás os dados de utilização da plataforms youtube e spotify.',
+        children='Vamos ver o que diz os dados de utilização das plataformas youtube e spotify sobre Mateus :).',
         style={
             'textAlign': 'left',
             'color': colors['text']
         }
     ),
 
-    html.Div(children='Dash: Confira dados do Mateus em 4 gráficos sobre youtube e spotify .',
+    html.Div(children='Dash:Confira dados do Mateus em 3 gráficos.',
              style={
         'textAlign': 'left',
         'color': colors['text']
     }),
-
-
+    html.Div(children='Gráfico-01: Classificados em order decrescente, gêneros preferidos do Mateus na plataforma SPOTIFY.O FORRÓ está em primeiro lugar.',
+             style={
+        'textAlign': 'left',
+        'color': colors['text']
+    })
+   ,
     dcc.Graph(
         id='example-graph-1',
         figure=fig_barh_horizontal
     ),
-    html.Div(children='Gráfico-02: Canais mais acessados.',
+    html.Div(children='Gráfico-02: Artistas preferidos :).',
              style={
         'textAlign': 'left',
         'color': colors['text']
@@ -64,8 +68,8 @@ def init_dashboard(server):
     dcc.Graph(
         id='example-graph-2',
         figure=fig_bar_vertical 
-    )
-,html.A(children='Voltar para início',
+    ),
+    html.A(children='Voltar para início',
              href = "https://vizwebdash.herokuapp.com/"
     )])
     
