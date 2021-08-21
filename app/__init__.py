@@ -1,22 +1,22 @@
-"""Initialize Flask app."""
-
+"""Inicialização do app Flask """
 from flask import Flask
 
 
 
 def init_app():
-    """Construct core Flask application with embedded Dash app."""
+    """Construção do núcleo da aplicação Flask com Dash APP embutido."""
     app = Flask(__name__,instance_relative_config=False)
     app.config.from_object('config')
     
     with app.app_context():
-        # Import parts of our core Flask app
+        # Importe do controle de rotas do app flask
         from app.controllers import routes
        
         
-        # Import Dash application
+        # Importe do app dash
         from .models.dashboard import init_dashboard
         
+        #Cria o app flask com dash app embutido 
         app = init_dashboard(app)        
         
         

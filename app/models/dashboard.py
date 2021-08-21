@@ -1,7 +1,9 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from .plotagem import cria_figura,cores_padrao
+
+
+from .plotagem import cria_fig_vertical_barra,cores_padrao,cria_fig_horizontal_barra
 
 """Nesse modulo será possivel criar um layout para a pagina  do dashboard"""
 
@@ -21,11 +23,11 @@ def init_dashboard(server):
     colors = cores_padrao()
     
     # Create Dash Layout
-    #figura 01, primeiros 7 generos mais ouvidos
-    trace1  = cria_figura()
+    #Gráfico de barra ertical com dados de genêros, primeiros 7 generos mais ouvidos
+    fig_bar_vertical  = cria_fig_vertical_barra()
   
 
-    trace2 = cria_figura()   
+    fig_barh_horizontal = cria_fig_horizontal_barra()  
     dash_app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
     html.H1(
         children='Dashboard',
@@ -50,7 +52,7 @@ def init_dashboard(server):
 
     dcc.Graph(
         id='example-graph-1',
-        figure=trace1 
+        figure=fig_barh_horizontal
     ),
     html.Div(children='Gráfico-02: Canais mais acessados.',
              style={
@@ -61,7 +63,7 @@ def init_dashboard(server):
 
     dcc.Graph(
         id='example-graph-2',
-        figure=trace2 
+        figure=fig_bar_vertical 
     )
 ,html.A(children='Voltar para início',
              href = "https://vizwebdash.herokuapp.com/"

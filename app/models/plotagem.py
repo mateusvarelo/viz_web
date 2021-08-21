@@ -1,15 +1,18 @@
-from .dataset import df_spotify_genero
 import plotly.express as px
+import plotly.graph_objects as go
 
-#Cores padões
+from .dataset import df_spotify_genero
+
+
+#Cria dict com cores padões para ser usado no gráfico e no layout do dash
 def cores_padrao():
         colors = {
         'background': '#F8F8FF',
         'text': '#111111'
         }
-        return colors    
+        return colors   
 
-#Criação de figuras, ou melhor dos gráficos que serão lançados no layout do app dash
+#Função para atualizar as cores das figuras, com um padrão de cores
 def layout_update(obj_update):
     colors = cores_padrao()    
     layout = obj_update.update_layout(
@@ -19,19 +22,40 @@ def layout_update(obj_update):
 )
     return layout  
 
-def cria_figura():
+#Cria um gráfico de barra horizontal com dados do dataframe!
+def cria_fig_horizontal_barra():
      #figura 01, primeiros 7 generos mais 
      #Busca  dataframe para plotar gráfico do spotify e cria a figura 
      df = df_spotify_genero()
-     fig  = px.bar(
-                 df, 
-                 x="genero", 
-                 y="Quantidade",
-                 barmode="relative",
-                 text = 'Quantidade',
-                 opacity=.8,
-               )
-     #Atualiza cores gráfico 1
+     fig = go.Figure(go.Bar(
+            x=df["Quantidade"],
+            y=df["genero"],
+             marker=dict(
+             color='#32CD32',
+            line=dict(color='#2E8B57', width=1)
+    ),
+            orientation='h'))
+     layout_update(fig)
+     return fig
+    
+
+
+ 
+
+#Criação do gráfico de barra vertical, com dados do dataframe 
+def cria_fig_vertical_barra():
+     #figura 01, primeiros 7 generos mais 
+     #Busca  dataframe para plotar gráfico do spotify e cria a figura 
+     df = df_spotify_genero()
+     fig = go.Figure(go.Bar(
+            x=df["genero"],
+            y=df["Quantidade"],
+             marker=dict(
+             color='#32CD32',
+            line=dict(color='#2E8B57', width=1)
+    ),
+            orientation='v'))
+     #Atualiza cores gráfico 
      layout_update(fig)
      return fig
 
