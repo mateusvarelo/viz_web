@@ -25,10 +25,10 @@ def init_dashboard(server):
     
     dash_app.layout = html.Div(id='dash-container',
                                children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='DASHBOARD-MATEUS'),
 
     html.Div(children='''
-        Dash: A web application framework for Python.
+        Dash: Confira dados do Mateus em 4 gráficos sobre youtube e spotify .
     '''),
 
     dcc.Graph(

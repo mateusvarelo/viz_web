@@ -1,10 +1,9 @@
 import pandas as pd
 
-#Class
-class ModelsDataset():
-     
-    def leitura_csv(self,dataset_local):
-        df = pd.read_csv(dataset_local)
-        return df    
-
+local_arquivo =  {
+            'spotify':"/home/mateus/Repositorios/viz_web/dataset/spotify/streamingspotify.csv",
+            'youtube':"/home/mateus/Repositorios/viz_web/dataset/youtube/visualizacao.csv"
+}
+df = pd.read_csv(local_arquivo['spotify'])
+print(df.head())
     
