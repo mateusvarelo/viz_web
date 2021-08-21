@@ -1,8 +1,8 @@
 import pandas as pd
 #Local dos arquivo
 local_arquivo =  {
-            'spotify':"/home/mateus/Repositorios/viz_web/dataset/spotify/streamingspotify.csv",
-            'youtube':"/home/mateus/Repositorios/viz_web/dataset/youtube/visualizacao.csv"
+            'spotify':"./dataset/spotify/streamingspotify.csv",
+            'youtube':"./dataset/youtube/visualizacao.csv"
 }
 #Função para ler arquivo csv e  retorna um dataframe, tipo de estrutura tabular que
 #a biblioteca pandas entende.

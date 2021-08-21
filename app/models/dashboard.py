@@ -9,7 +9,7 @@ from .plotagem import cria_figura,cores_padrao
 def init_dashboard(server):
     """Create a Plotly Dash dashboard como um servidor dash."""
     #Estilo css para a pagina
-    external_stylesheets = ['/home/mateus/Repositorios/viz_web/app/static/css/bootstrap.min.css']
+    external_stylesheets = ['../static/css/bootstrap.min.css']
     #App dash
     dash_app = dash.Dash(
         server=server,
