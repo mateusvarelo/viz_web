@@ -63,7 +63,7 @@ def init_dashboard(server):
         id='example-graph-2',
         figure=trace2 
     )
-,html.A(children='Voltar para inicio',
+,html.A(children='Voltar para início',
              href = "https://vizwebdash.herokuapp.com/"
     )])
     

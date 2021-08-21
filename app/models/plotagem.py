@@ -1,4 +1,4 @@
-from .dataset import df_spotify
+from .dataset import df_spotify_genero
 import plotly.express as px
 
 #Cores padões
@@ -22,8 +22,8 @@ def layout_update(obj_update):
 def cria_figura():
      #figura 01, primeiros 7 generos mais 
      #Busca  dataframe para plotar gráfico do spotify e cria a figura 
-     df = df_spotify()
-     trace1  = px.bar(
+     df = df_spotify_genero()
+     fig  = px.bar(
                  df, 
                  x="genero", 
                  y="Quantidade",
@@ -32,7 +32,7 @@ def cria_figura():
                  opacity=.8,
                )
      #Atualiza cores gráfico 1
-     layout_update(trace1)
-     return trace1
+     layout_update(fig)
+     return fig
 
 
