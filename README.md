@@ -9,6 +9,10 @@ Se você prepefere rodar em sua máquina, adianto que a seguintes bibliotecas se
 * [dash 1.21.0](https://plotly.com/)
 * [Flask 2.0.1](https://flask.palletsprojects.com/en/2.0.x/)
 * [plotly 5.2.1](https://plotly.com/)
+* CSS
+* HTML
+* Bootstrap
+* Js
 
 É Preciso entender como elas funciona. Por exemplo o framework flask foi muito útil para conexão entre o backend e o frontend.Esse framework web  da linguagem python tem tem uma  arquitetura do tipo modelo [MVC](https://www.lewagon.com/pt-BR/blog/o-que-e-padrao-mvc#:~:text=O%20MVC%20%C3%A9%20uma%20sigla,sejam%20mais%20r%C3%A1pidas%20e%20din%C3%A2micas.).Aconselho fortemente buscar informações de como funciona esse modelo.
 
