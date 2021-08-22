@@ -41,6 +41,13 @@ def cria_fig_horizontal_barra():
             line=dict(color='#2E8B57', width=1)
     ),
             orientation='h'))
+     
+     """Add titulo e legendas para o gráfico"""  
+     fig.update_layout(
+             title='Gráfico-01: Classificados em order decrescente, gêneros preferidos do Mateus na plataforma SPOTIFY.O FORRÓ está em primeiro lugar.',
+             xaxis_title='Gênero musical',
+             yaxis_title='Total de reproduções')
+     
      """Chamada da função para atualizar layout """
      layout_update(fig)
      return fig
@@ -65,6 +72,13 @@ def cria_fig_vertical_barra():
     ),
             orientation='v'))
      
+     """Add titulo e legendas para o gráfico"""  
+     fig.update_layout(
+             title='Gráfico-02: Artistas preferidos :).',
+             xaxis_title='Artista',
+             yaxis_title='Total músicas')
+     
+     
      """Atualiza layout gráfico""" 
      layout_update(fig)
      
@@ -79,4 +93,14 @@ def cria_grafico_linha_youtube():
                     mode = 'lines',
                     name = 'Quantidade')
         )
+        
+        
+        """Add titulo e legendas para o gráfico"""  
+        fig.update_layout(
+             title='Gráfico-03:Quantidade de visualizações de videos no YOUTUBE por mês.',
+             xaxis_title='Mês',
+             yaxis_title='Total visualizações')
+        
+        layout_update(fig)
+     
         return fig

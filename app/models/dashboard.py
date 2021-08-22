@@ -10,36 +10,43 @@ from .plotagem import cria_fig_vertical_barra,cores_padrao,cria_fig_horizontal_b
 
 def init_dashboard(server):
     """Create a Plotly Dash dashboard como um servidor dash."""
-    #Estilo css para a pagina
+    
+    """Estilo css para a pagina"""
     external_stylesheets = ['../static/css/bootstrap.min.css']
-    #App dash
+    
+    #Inicializando App dash
     dash_app = dash.Dash(
         server=server,
         routes_pathname_prefix='/dashboard/',
         external_stylesheets= external_stylesheets
     )
   
-    #cores_padrão
+    """Definição de cores padrão"""
     colors = cores_padrao()
     
-    # Create Dash Layout
-    #Gráfico de barra ertical com dados de genêros, primeiros 7 generos mais ouvidos
+    """Create Dash Layout"""
+    
+    """Gráfico de barra ertical com dados de genêros, primeiros 7 generos mais ouvidos"""
+     
+    """Gráficos pronto para inserir no layout """
     fig_bar_vertical  = cria_fig_vertical_barra()
-  
 
     fig_barh_horizontal = cria_fig_horizontal_barra()  
     
-    
     fig_line_youtube = cria_grafico_linha_youtube()
     
-    dash_app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
+    """Criando layout para pagina"""
+    dash_app.layout = html.Div(
+        style={'backgroundColor': colors['background']}, 
+        children=[
     html.H1(
-        children='Dashboard',
+        children='Dashboard :)',
         style={
             'textAlign': 'left',
             'color': colors['text']
         }
-    ), html.H4(
+    ),
+    html.H4(
         children='Vamos ver o que diz os dados de utilização das plataformas youtube e spotify sobre Mateus :).',
         style={
             'textAlign': 'left',
@@ -52,27 +59,16 @@ def init_dashboard(server):
         'textAlign': 'left',
         'color': colors['text']
     }),
-    html.Div(children='Gráfico-01: Classificados em order decrescente, gêneros preferidos do Mateus na plataforma SPOTIFY.O FORRÓ está em primeiro lugar.',
-             style={
-        'textAlign': 'left',
-        'color': colors['text']
-    })
-   ,
+   
     dcc.Graph(
         id='example-graph-1',
         figure=fig_barh_horizontal
     ),
-    html.Div(children='Gráfico-02: Artistas preferidos :).',
-             style={
-        'textAlign': 'left',
-        'color': colors['text']
-    }),
-
-
     dcc.Graph(
         id='example-graph-2',
         figure=fig_bar_vertical 
     ),
+    
     dcc.Graph(
         id='example-graph-',
         figure=fig_line_youtube
