@@ -6,13 +6,13 @@ local_arquivo =  {
             'spotify':"./dataset/spotify/streamingspotify.csv",
             'youtube':"./dataset/youtube/visualizacao.csv"
 }
+
 """Funções para ler arquivo csv e  retorna um dataframe pronto para plotar gráficos, tipo de estrutura tabular que a biblioteca pandas entende e a plotly."""
 
 """Função para alterar nome da coluna do df"""
 def altera_coluna_nome(df,antigo_nome,novo_nome):
     df.rename({antigo_nome:novo_nome},axis = 1,inplace=True)
     return df
-
 
 """Lendo csv spotify"""
 def df_spotify_genero():

@@ -3,7 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 
-from .plotagem import cria_fig_vertical_barra,cores_padrao,cria_fig_horizontal_barra
+from .plotagem import cria_fig_vertical_barra,cores_padrao,cria_fig_horizontal_barra,cria_grafico_linha_youtube
 
 """Nesse modulo será possivel criar um layout para a pagina  do dashboard"""
 
@@ -28,6 +28,10 @@ def init_dashboard(server):
   
 
     fig_barh_horizontal = cria_fig_horizontal_barra()  
+    
+    
+    fig_line_youtube = cria_grafico_linha_youtube()
+    
     dash_app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
     html.H1(
         children='Dashboard',
@@ -69,9 +73,16 @@ def init_dashboard(server):
         id='example-graph-2',
         figure=fig_bar_vertical 
     ),
+    dcc.Graph(
+        id='example-graph-',
+        figure=fig_line_youtube
+    ),
     html.A(children='Voltar para início',
              href = "https://vizwebdash.herokuapp.com/"
-    )])
+    ),
+    
+  ]
+    )
     
 
 
